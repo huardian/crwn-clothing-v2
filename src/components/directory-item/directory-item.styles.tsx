@@ -31,10 +31,13 @@ export const Body = styled.div`
     color: #4a4a4a;
     text-transform: uppercase;
   }
-
   p {
     font-weight: lighter;
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 0;
   }
 `;
 
@@ -48,25 +51,23 @@ export const DirectoryItemContainer = styled.div`
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
-
-  &:hover {
-    cursor: pointer;
-
-    & ${BackgroundImage} {
-      transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    }
-
-    & ${Body} {
-      opacity: 0.9;
-    }
-  }
-
   &:first-child {
     margin-right: 7.5px;
   }
-
   &:last-child {
     margin-left: 7.5px;
+  }
+  &:hover {
+    cursor: pointer;
+    ${BackgroundImage} {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+    ${Body} {
+      opacity: 0.9;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    height: 200px;
   }
 `;
